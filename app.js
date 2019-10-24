@@ -44,13 +44,12 @@ window.addEventListener('load', ()=> {
                 });
                 
             });
-        });
-
-
-        
+        });        
         
     }
 
+
+    function setIcon()
     
         
     
