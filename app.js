@@ -30,6 +30,8 @@ window.addEventListener('load', ()=> {
                 temperatureDegree.textContent = temperature;
                 temperatureDescription.textContent = summary;
                 locationTimeZone.textContent = data.timezone;
+                console.log("ICON", icon);
+                setIcon(icon, document.querySelector(".icon"));
 
                 let celsius = (temperature - 32) * (5/9);
 
@@ -44,15 +46,14 @@ window.addEventListener('load', ()=> {
                 });
                 
             });
-        });        
-        
+        });                
     }
 
 
-    function setIcon()
-    
-        
-    
-
-
+    function setIcon(icon, iconID) {
+        const skycons = new Skycons({color: "white"});
+        const currentIcon = icon.replace(/-/g, "_").toUpperCase();
+        skycons.play();
+        return skycons.set(iconID, Skycons[currentIcon]);
+    }     
 });
